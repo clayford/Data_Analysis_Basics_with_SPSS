@@ -1,0 +1,263 @@
+---
+title: "Data Analysis Basics with SPSS"
+subtitle: "SoTL Writing Retreat, 2023"
+author: "Clay Ford, UVA Library"
+format:
+  revealjs:
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    slide-number: true
+    logo: images/logo.png
+    footer: clayford@virginia.edu | GitHub [@clayford](https://github.com/clayford)
+---
+
+## Topics
+
+- Download and install SPSS
+- Importing data into SPSS
+- Preparing data for analysis
+- Descriptive statistics
+- Basic visualization
+- Example of inferential analysis
+
+## Download/Install SPSS
+
+- SPSS is free for UVA students, faculty, and staff. Download from the [UVA Software Gateway](https://virginia.service-now.com/its/?id=sg_catalog&sys_id=709c5ed4dbe5e34c2192e6650596198a).
+
+- Select the "Teaching & Research" version for your operating system (Windows or Mac). File is about 860 MB.
+
+- Installation instructions are on this page: [https://data.library.virginia.edu/research-software/spss/](https://data.library.virginia.edu/research-software/spss/)
+
+- You need to "authorize" SPSS using the UVA Authorization Code, which is provided when you download SPSS. It's 20 characters in length.
+
+## Download
+
+Go to the [UVA Software Gateway](https://virginia.service-now.com/its/?id=sg_catalog&sys_id=709c5ed4dbe5e34c2192e6650596198a). Click the one for your operating system.
+
+![](images/install_01.jpg){.absolute width=50%}
+
+## Activation code
+
+Be sure to copy and save the "Activation Code".
+
+
+![](images/install_02.jpg){.absolute width=50%}
+
+
+## After installation...
+
+You should see this dialog. Click "Launch License Wizard" to authorize the software with the "Activation Code".
+
+![](images/install_03.jpg){.absolute width=70%}
+
+
+## Select Authorized user license
+
+Select the first option (it should be the default) and click Next.
+
+![](images/install_04.jpg){.absolute width=70%}
+
+## Enter code
+
+Enter the "Activation Code" in the "Enter Code" field, click Add, and click Next.
+
+![](images/install_05.jpg){.absolute width=70%}
+
+## Successful authorization
+
+If all went well, you should see something like this. Now you're ready to use SPSS! 
+
+Heads up: you'll need reauthorize SPSS every year.
+
+![](images/install_06.jpg){.absolute width=50%}
+
+
+## Importing Data
+
+- SPSS is for data analysis, not data entry.
+- You almost always need to _import_ data into SPSS.
+- Data typically come from surveys, public use data files, databases, or Excel.
+- To import an Excel file: **File**...**Import Data**...**Excel**...
+- To import a CSV file: **File**...**Import Data**...**CSV Data**...
+
+## Import Excel example
+
+![](images/import.jpg){.absolute width=50%}
+
+
+## Good Excel vs Bad Excel
+
+When it comes to importing data from Excel, keep it simple.
+
+![](images/bad_good_excel.jpg){.absolute width=50%}
+
+## Save as SPSS Data
+
+- After you import data you'll want to save as a SPSS data file (.sav).
+- **File**...**Save As**...
+- Now you can just open the SAV file when you want to work with the data
+- Note: some public use data sets are already SAV files.
+
+## Preparing Data
+
+Three things we usually want to check and/or fix:
+
+1. variable labels
+2. value labels
+3. measure type
+
+## Variable labels
+
+- A variable _name_ usually is brief and has no spaces or special characters. For example: "H_Under6_SingleM"
+- A variable _label_ provides more detail. For example: "Households with
+Children Under 6 with Single Mother"
+- You'll probably want to add variable labels if none exist
+- Variable labels appear in plots and output
+
+
+## Adding variable labels
+
+On **Variable View** tab, enter a label in the Label column
+
+![](images/label_variable.jpg){.absolute width=70%}
+
+## Value labels
+
+- A variable has _values_. Values sometimes need descriptive labels.
+- For example, a variable named "married" may consist of 0 and 1, where 0 = Unmarried and 1 = Married
+- Adding value labels allows us to toggle between 0/1 and unmarried/married.
+- Value labels appear in plots and outputs
+
+## Adding value labels
+
+On **Variable View** tab, go to the Values column and click in the cell for the variable that you want to add value labels and click the three dots button
+
+![](images/label_values.jpg){.absolute width=50%}
+
+## Measure type
+
+There are three types of measures in SPSS: 
+
+1. **Scale**  (numeric values)
+2. **Ordinal**  (ordered categories; eg: 1 = never, 2 = rarely, 3 = sometimes,…)
+3. **Nominal** (unordered categories; eg: O positive, O negative, A positive,…)
+
+Often these are fine as is, but sometimes you need to modify; for example, if numbers represent categories, then change from Scale to Ordinal or Nominal
+
+## Changing Measure type
+
+On **Variable View** tab, go to the Measure column and set as needed
+
+![](images/measure.jpg){.absolute width=30%}
+
+## Descriptive statistics
+
+For numeric variables we may be interested in
+
+- Smallest and largest values (minimum and maximum)
+- Measure of center (mean or median)
+- How spread out is it (standard deviation or interquartile range)
+- Relationship between numeric variables (correlation)
+
+For categorical variables we may be interested in
+
+- Number in each category
+- Proportion in each category
+- Cross tabulations; eg, gender (M/F) vs floss (Y/N)
+
+## Numeric summary stats
+
+Here's one approach to getting summary stats for numeric data
+
+1. Go to Analyze…Descriptive Statistics…Frequencies
+2. Select numeric variables and click “add” arrow
+3. Click Statistics… button
+4. Select Quartiles, Median, Mean, Std. deviation, Minimum and Maximum
+5. Uncheck “Display frequency tables”
+6. Click OK
+
+## Categorical summary stats
+
+1. Go to Analyze…Descriptive Statistics…Frequencies
+2. Click Reset if you previously ran numeric summary stats
+3. Make sure “Display frequency tables” is checked
+
+## Summary stats by group
+
+It’s often instructive to examine summary stats by groups. For example: mean income by gender
+
+1. Go to Analyze…Compare Means…Means…
+2. Add a numeric variable to the Dependent List and a categorical variable to the Independent List
+3. Click Options… to add other estimates such as the median, min, max, etc.
+4. Click OK
+
+## Cross tabulations
+
+We often want to tally categorical variables conditional on another categorical variable. For example: how many men and women are in each income category?
+
+1. Go to Analyze…Descriptive Statistics…Crosstabs…
+2. Add a categorical variable to Rows, and another to Columns
+3. Click the Cells… button in the Crosstabs dialog to add row and column percentages
+4. Click OK
+
+## Basic Visualization
+
+Chart Builder in SPSS allows us to quickly visualize our data
+
+1. Go to Graphs…Chart Builder…
+2. Browse the Gallery for the type of graph you want to create
+3. Drag the graph thumbnail into the empty window to get started
+
+## Chart Builder
+
+![](images/chart_builder.jpg){.absolute height=70%}
+
+## Output
+
+All output is sent to the Viewer. This file can be saved. It will have an .spv file extension.
+
+Graphs and tables can be copied out of the Viewer file and pasted into reports and presentations.
+
+The Viewer file can be shared with colleagues.
+
+The View file can be exported as a PDF file (among other formats) and shared with colleagues who don't have SPSS.
+
+## Statistical inference
+
+- We usually don't have all the data but just a _sample_. 
+- We often hope the sample is representative of the _population_.
+- We use sample statistics to _infer_ properties of the population.
+- Example: mean weight of student backpacks at UVA.
+- Not practical to weigh all 23,000 backups, so take a _random sample_ and use the mean of the sample to estimate the population mean.
+
+## Statistical inference
+
+- Statistical inference involves topics such as hypothesis testing, confidence intervals, multiple regression, ANOVA, structural equation modeling, multilevel modeling, etc.
+- This is why researchers need software like SPSS (or Stata, R, SAS, Minitab, GraphPad Prism, ...)
+- You'll probably only ever use a fraction of the statistical routines available.
+
+## Analysis example
+
+How has cost of preschool child care increased in Virginia from 2008 - 2018?
+
+National Database of Childcare Prices: 
+[https://www.dol.gov/agencies/wb/topics/featured-childcare](https://www.dol.gov/agencies/wb/topics/featured-childcare)
+
+The National Database of Childcare Prices (NDCP) offers childcare price data by childcare provider type, age of children, and county characteristics. Data are available from 2008 to 2018.
+
+## Steps for analysis
+
+1. Import data
+2. Inspect data
+3. Summarize and visualize
+4. Model preschool cost as a function of year with county as a random effect
+5. Save Viewer file
+
+## Go further
+
+- Google is always your friend
+- In SPSS, go to Help…Topics, scroll to Tutorial and begin the official SPSS Tutorial
+- In SPSS, go to Help…Topics, scroll to Case Studies and pick a topic of interest
+- In SPSS, go to Help…Topics, scroll to Statistics Coach and find help on a topic of interest
+
