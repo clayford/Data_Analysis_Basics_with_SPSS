@@ -261,3 +261,15 @@ The National Database of Childcare Prices (NDCP) offers childcare price data by 
 - In SPSS, go to Help…Topics, scroll to Case Studies and pick a topic of interest
 - In SPSS, go to Help…Topics, scroll to Statistics Coach and find help on a topic of interest
 
+## UVA StatLab
+
+Thank you for coming!
+
+For help with study design and statistical analysis, email to set up an appointment: <statlab@virginia.edu>
+
+For more information:   
+<https://data.library.virginia.edu/statlab/>
+
+We also teach free workshops:   
+<http://data.library.virginia.edu/training/>
+
