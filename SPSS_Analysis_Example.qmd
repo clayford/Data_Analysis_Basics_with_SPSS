@@ -1,0 +1,111 @@
+---
+title: "SPSS Example Analysis"
+author: "Clay Ford, UVA StatLab"
+format:
+  pdf:
+    embed-resources: true
+---
+
+## Research Question
+
+How has cost of preschool child care increased in Virginia from 2008 - 2018?
+
+National Database of Childcare Prices: 
+[https://www.dol.gov/agencies/wb/topics/featured-childcare](https://www.dol.gov/agencies/wb/topics/featured-childcare)
+
+The National Database of Childcare Prices (NDCP) offers childcare price data by childcare provider type, age of children, and county characteristics. Data are available from 2008 to 2018.
+
+Our data has one row per Virginia county per year from 2008 to 2018.
+
+## Import data
+
+1. File...Import Data...Excel...
+2. Select "va_childcare_prices.xlsx" and click Open
+3. In the Read Excel File preview, ensure first row of data is used for variable names.
+4. Click OK
+5. Save data as SPSS data file (.sav). File...Save As..., enter a file name such as "va_child_care" and click Save.
+
+## Inspect Data
+
+Add Variable labels and ensure variable have appropriate Measure type.
+
+1. In the Data Editor, go to the Variable View tab
+2. Add Variable labels in Label column   
+    * Add label "Median Price of Center-Based Care – Preschool" for variable "MCPreschool"
+    * Add label "Year" for variable "StudyYear"   
+3. Ensure variable County_FIPS_Code has Measure type "Nominal"
+
+The MCPreschool variable reports "Aggregated weekly, full-time median price charged for Center-based Care for preschoolers (i.e. aged 36 through 54 months)"
+
+## Summarize and visualize
+
+#### Calculate mean cost of Preschool by Year
+
+1. Analyze...Compare Means...Means...
+2. Add MCPreschool to Dependent List, add StudyYear to Independent List
+3. Click OK.
+
+Cost appears to be rising about $3 per year.
+
+#### Visualize Preschool cost by county over time
+
+1. Go to Graphs...Chart Builder...
+2. In the Gallery select Line, and drag the Multiple Line icon to the palette.
+3. Drag StudyYear to "X-Axis?" box
+4. Drag MCPreschool to "Y-Axis?" box
+5. Drag County_Name to "Set color?" box
+6. Click OK
+
+The resulting spaghetti plot is a little messy, but overall we see preschool cost increasing for all counties over time. In addition the trajectory of increase looks similar for all counties, though there is a great deal of variation in cost between the counties.
+
+## Model preschool cost as a function of year with county as a random effect 
+
+This is an example of a multilevel model, or a random-intercept mixed-effect model.
+
+1. Go to Analyze...Mixed Models...Linear...
+2. In the "Specify Subjects and Repeated" dialog, add County_Name to the Subjects Field and click Continue
+3. In the "Linear Mixed Models" dialog  
+    * add MCPreschool to the Dependent variable field
+    * add StudyYear to Covariate field
+4. Click the Fixed... button
+    * Click StudyYear and click Add.. Then click Continue.
+5. Click the Random... button
+    * in the Subject Groupings section at bottom, click County_Name and then click the arrow to add to Combinations.
+    * check the box Include Intercept
+    * click Continue
+6. Click the Statistics... button and check the boxes for "Parameter estimates for fixed effects" and "Covariances of random effects". Click Continue
+7. Click OK
+
+#### Interpretation
+
+In the output under Estimates of Fixed Effects, we see a StudyYear coefficient of 3.020 and a 95% confidence interval of [2.859, 3.180]. This estimates the cost of Preschool increasing by about $3 per week each year from 2008 - 2018.
+
+In the output under Estimates of Covariance parameters, we see two estimates for variance:
+
+1. Residual: this is the variability _within_ each county.
+2. Intercept/County_Name: this is the variability _between_ each county.
+
+Clearly there is much more variability between counties than within counties.
+
+Some researchers and journals like to report Intraclass Correlation Coefficients (ICC). This is the Intercept/Group variance divided by the total variance.
+
+$$\text{ICC} = \frac{1973.786}{1973.786 + 73.151} = 0.964$$ 
+
+About 96% of the variability in pre-school cost is due to County, or location.
+
+## Save Viewer file
+
+We can save our analysis results for later review or to share with colleagues.
+
+In the Viewer window, click File...Save As..., type a name such as "analysis_results" and click Save. This saves an SPV file that requires SPSS to view.
+
+To create a PDF file that anyone can view:
+
+1. right click in the Viewer window, 
+2. click Export, 
+3. in the Objects to Export, select "All visible"
+3. under "Type:" make sure PDF is selected,
+4. Click Browse... to choose where to save the PDF file, give it a name, and click Save
+5. Click OK
+
+<br><br><br>

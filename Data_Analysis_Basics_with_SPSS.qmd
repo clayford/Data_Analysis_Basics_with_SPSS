@@ -19,7 +19,7 @@ format:
 - Preparing data for analysis
 - Descriptive statistics
 - Basic visualization
-- Example of inferential analysis
+- Example of a full statistical analysis
 
 ## Download/Install SPSS
 
@@ -88,7 +88,7 @@ Heads up: you'll need reauthorize SPSS every year.
 
 ## Good Excel vs Bad Excel
 
-When it comes to importing data from Excel, keep it simple.
+When it comes to entering data into Excel, keep it simple.
 
 ![](images/bad_good_excel.jpg){.absolute width=50%}
 
@@ -109,9 +109,8 @@ Three things we usually want to check and/or fix:
 
 ## Variable labels
 
-- A variable _name_ usually is brief and has no spaces or special characters. For example: "H_Under6_SingleM"
-- A variable _label_ provides more detail. For example: "Households with
-Children Under 6 with Single Mother"
+- A variable _name_ usually is brief and has no spaces or special characters. For example: "inccat"
+- A variable _label_ provides more detail. For example: "Income Category"
 - You'll probably want to add variable labels if none exist
 - Variable labels appear in plots and output
 
@@ -125,7 +124,7 @@ On **Variable View** tab, enter a label in the Label column
 ## Value labels
 
 - A variable has _values_. Values sometimes need descriptive labels.
-- For example, a variable named "married" may consist of 0 and 1, where 0 = Unmarried and 1 = Married
+- For example, a variable named "marital" may consist of 0 and 1, where 0 = Unmarried and 1 = Married
 - Adding value labels allows us to toggle between 0/1 and unmarried/married.
 - Value labels appear in plots and outputs
 
@@ -226,15 +225,16 @@ The View file can be exported as a PDF file (among other formats) and shared wit
 ## Statistical inference
 
 - We usually don't have all the data but just a _sample_. 
-- We often hope the sample is representative of the _population_.
+- We hope the sample is representative of the _population_.
 - We use sample statistics to _infer_ properties of the population.
 - Example: mean weight of student backpacks at UVA.
-- Not practical to weigh all 23,000 backups, so take a _random sample_ and use the mean of the sample to estimate the population mean.
+- Not practical to weigh all 23,000 backpacks, so take a _random sample_ and use the mean of the sample to estimate the population mean.
+- Statistical inference attempts to quantify the _uncertainty_ in estimates using standard errors and probability.
 
 ## Statistical inference
 
 - Statistical inference involves topics such as hypothesis testing, confidence intervals, multiple regression, ANOVA, structural equation modeling, multilevel modeling, etc.
-- This is why researchers need software like SPSS (or Stata, R, SAS, Minitab, GraphPad Prism, ...)
+- This is why researchers need software like SPSS (or R, Stata, SAS, Minitab, GraphPad Prism, ...)
 - You'll probably only ever use a fraction of the statistical routines available.
 
 ## Analysis example
@@ -251,10 +251,12 @@ The National Database of Childcare Prices (NDCP) offers childcare price data by 
 1. Import data
 2. Inspect data
 3. Summarize and visualize
-4. Model preschool cost as a function of year with county as a random effect
+4. Model preschool cost as a function of year with county as a random effect (Example of multilevel model)
 5. Save Viewer file
 
-## Go further
+See `SPSS_Analysis_Example.pdf` for detailed steps.
+
+## Learn More
 
 - Google is always your friend
 - In SPSS, go to Help…Topics, scroll to Tutorial and begin the official SPSS Tutorial
